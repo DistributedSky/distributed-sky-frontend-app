@@ -1,5 +1,5 @@
 {
-  "name": "dsky-frontend-app",
+  "name": "distributed-sky-frontend-app",
   "version": "1.0.0",
   "dependencies": {
     "@encointer/util": "^0.1.0",

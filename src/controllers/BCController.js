@@ -34,6 +34,18 @@ export default class BCController {
         return await this._managerBC.zoneAdd(zones, rootId);
     }
 
+    async routeAdd(_polyline, rootId) {
+        // TODO convert polyline to array, generate moments
+        console.log(_polyline);
+        // (n>2) change fn for this, there will be an iter
+        const polyline = Parser.getRectCoords(_polyline);
+        console.log(polyline);
+
+        const startTime = Date.now() + 1000000;
+        const arrivalTime = startTime + 1000000;
+        return await this._managerBC.routeAdd(polyline, rootId, startTime, arrivalTime);
+    }
+
     async rootRequest(touchLat, touchLon) {
         const latFix = Parser.parseToCoord(Parser.trimTo(parseFloat(touchLat), 7));
         const lonFix = Parser.parseToCoord(Parser.trimTo(parseFloat(touchLon), 7));
